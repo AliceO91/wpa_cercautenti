@@ -1,0 +1,25 @@
+<h2>Utenti</h2>
+
+<label>Cerca utente: <input [(ngModel)]="searchText" [value]="searchText" ></label>
+<ul class="listResult">
+  <li *ngFor="let user of users | userFilter:searchText" [class.selected]="user === selectedUser"
+    (click)="onSelect(user)">
+    <div class="container">
+      <div class="user-card row">
+        <div class="col-lg">
+          <img src="{{user.avatar}}" class="img-thumbnail"/>
+        </div>
+        <div class="user-description col-sm">
+            <div class="user-maininfo">{{user.id}} - {{user.nomeCompleto}}</div> 
+            <div *ngIf="user.biografia"><i>Biografia:</i> <p>{{user.biografia}}</p></div>
+            <div *ngIf="user.localita"><i>Localita:</i> <p>{{user.localita}}</p></div>
+            <div *ngIf="user.organizzazione"><i>Organizzazione:</i> <p>{{user.organizzazione}}</p></div>
+            <div *ngIf="user.sitoWeb"><i>Sito Web:</i> <p class="user-url">{{user.sitoWeb}}</p></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<div class="alert alert-danger" role="alert" *ngIf="(users | userFilter: searchText).length === 0">
+  "Nessun Risultato"
+</div>

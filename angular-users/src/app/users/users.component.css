@@ -1,0 +1,34 @@
+h2{
+	color: green;
+}
+.user-card{
+	color: navy;
+    background-color: paleturquoise;
+	border-color: navy;
+	margin-bottom: 2%;
+}
+
+.user-description{
+	text-align: left;
+}
+
+.user-maininfo{
+	font-weight: bold;
+	font-size:2em;
+}
+
+.user-url{
+	text-decoration: underline;
+}
+li{
+	list-style:outside none none; 
+ }
+
+ .listResult{
+	 margin-right: 3%;
+ }
+
+ p{
+	 display: inline;
+	 margin-left: 1%;
+ }

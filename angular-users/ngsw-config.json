@@ -1,0 +1,49 @@
+{
+  "index": "/angular-users/index.html",
+  "assetGroups": [{
+    "name": "angular-users",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/angular-users/favicon.ico",
+        "/angular-users/index.html",
+        "/angular-users/*.css",
+        "/angular-users/*.js"
+      ]
+    }
+  }, {
+    "name": "/angular-users/assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/angular-users/assets/**"
+      ]
+    }
+  }
+],
+"dataGroups": [
+  {
+    "name": "local-api",
+    "urls": [
+      "http://localhost:8080/**"
+    ],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "1d",
+      "strategy": "freshness"
+    }
+  },
+  {
+    "name": "api-performance",
+    "urls": [
+      "/users" 
+    ],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": "3d"
+    }
+  }
+]
+}
